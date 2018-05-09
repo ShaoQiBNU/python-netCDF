@@ -1,7 +1,8 @@
-# python-netCDF-
-用python的netCDF4库处理nc数据，并用basemap绘图，具体步骤如下：
+python-netCDF-用python的netCDF4库处理nc数据，并用basemap绘图，具体步骤如下：
+=====================================================================
 
 1.导入所需要的库
+--------------
 import matplotlib.pyplot as plt 
 plt.rc('font',family='Times New Roman',weight='normal')  
 import matplotlib.cm as cm
@@ -12,6 +13,7 @@ from mpl_toolkits.basemap import Basemap
 import matplotlib as mpl
 
 2.读取nc数据，查看数据基本信息
+--------------------------
 fn=r'C:\Users\shaoqi_i\Desktop\E_1980_GLEAM_v31a.nc'
 fn_nc=Dataset(fn)
 
