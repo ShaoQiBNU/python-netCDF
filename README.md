@@ -14,42 +14,42 @@ import matplotlib as mpl <br>
 
 2.读取nc数据，查看数据基本信息
 --------------------------
-fn=r'C:\Users\shaoqi_i\Desktop\E_1980_GLEAM_v31a.nc'
-fn_nc=Dataset(fn)
+fn=r'C:\Users\shaoqi_i\Desktop\E_1980_GLEAM_v31a.nc' <br> 
+fn_nc=Dataset(fn) <br> 
 
-print('The nc file info is:')
-print(fn_nc)
+print('The nc file info is:') <br> 
+print(fn_nc) <br> 
 
 3.查看数据中的所有变量
 --------------------
-print("The nc file's variables are:")
-print(fn_nc.variables.keys())  
+print("The nc file's variables are:") <br> 
+print(fn_nc.variables.keys()) <br> 
 
 4.查看数据中变量E的基本信息
 -------------------------
-print("E is:")
-summary_E=fn_nc.variables['E']
-print(summary_E)
+print("E is:") <br> 
+summary_E=fn_nc.variables['E'] <br> 
+print(summary_E) <br> 
 
 #属性
-print("E's attributes are:")
-attributes_E=fn_nc.variables['E'].ncattrs()
-print(attributes_E)
+print("E's attributes are:") <br> 
+attributes_E=fn_nc.variables['E'].ncattrs() <br> 
+print(attributes_E) <br> 
 
 #单位
-print("E's units are:")
-units_E=fn_nc.variables['E'].units
-print(units_E)
+print("E's units are:") <br> 
+units_E=fn_nc.variables['E'].units <br> 
+print(units_E) <br> 
 
 #无效值
-print("E's _FillValue are:")
-FillValue_E=fn_nc.variables['E']._FillValue
-print(FillValue_E)
+print("E's _FillValue are:") <br> 
+FillValue_E=fn_nc.variables['E']._FillValue <br> 
+print(FillValue_E) <br> 
 
 名称
-print("E's standard_name are:")
-standard_name_E=fn_nc.variables['E'].standard_name
-print(standard_name_E)
+print("E's standard_name are:") <br> 
+standard_name_E=fn_nc.variables['E'].standard_name <br> 
+print(standard_name_E) <br> 
 
 5.获取变量E，查看E的行列波段号，显示为（366,1440,720），366代表1981年366天，1440是行号，720是列号
 ----------------------------------------------------------------------------------------
