@@ -32,6 +32,7 @@ summary_E=fn_nc.variables['E'] <br>
 print(summary_E) <br> 
 
 #属性
+----
 print("E's attributes are:") <br> 
 attributes_E=fn_nc.variables['E'].ncattrs() <br> 
 print(attributes_E) <br> 
