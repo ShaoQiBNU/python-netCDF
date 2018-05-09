@@ -3,14 +3,14 @@ python-netCDF-用python的netCDF4库处理nc数据，并用basemap绘图，具�
 
 1.导入所需要的库
 --------------
-import matplotlib.pyplot as plt<br> 
-plt.rc('font',family='Times New Roman',weight='normal')  
-import matplotlib.cm as cm
-import matplotlib.colors
-import numpy as np
-from netCDF4 import Dataset
-from mpl_toolkits.basemap import Basemap
-import matplotlib as mpl
+import matplotlib.pyplot as plt <br> 
+plt.rc('font',family='Times New Roman',weight='normal')  <br> 
+import matplotlib.cm as cm <br> 
+import matplotlib.colors <br> 
+import numpy as np <br> 
+from netCDF4 import Dataset <br> 
+from mpl_toolkits.basemap import Basemap <br> 
+import matplotlib as mpl <br> 
 
 2.读取nc数据，查看数据基本信息
 --------------------------
