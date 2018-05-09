@@ -21,25 +21,27 @@ print('The nc file info is:')
 print(fn_nc)
 
 3.查看数据中的所有变量
+--------------------
 print("The nc file's variables are:")
 print(fn_nc.variables.keys())  
 
 4.查看数据中变量E的基本信息
+-------------------------
 print("E is:")
 summary_E=fn_nc.variables['E']
 print(summary_E)
 
-属性
+#属性
 print("E's attributes are:")
 attributes_E=fn_nc.variables['E'].ncattrs()
 print(attributes_E)
 
-单位
+#单位
 print("E's units are:")
 units_E=fn_nc.variables['E'].units
 print(units_E)
 
-无效值
+#无效值
 print("E's _FillValue are:")
 FillValue_E=fn_nc.variables['E']._FillValue
 print(FillValue_E)
@@ -50,18 +52,21 @@ standard_name_E=fn_nc.variables['E'].standard_name
 print(standard_name_E)
 
 5.获取变量E，查看E的行列波段号，显示为（366,1440,720），366代表1981年366天，1440是行号，720是列号
+----------------------------------------------------------------------------------------
 E=fn_nc.variables['E'] 
 print(E.shape)
 
 利用numpy的mask功能将无效值-999变成-，从而不影响后面的计算和出图
 E=np.ma.masked_values(E,FillValue_E)
 
-6.计算1981年全球的总蒸发量，axis表示按哪个坐标轴取和，366为天数，因此取0。
-在hdf-view里可以看到，数据的行列号是颠倒的，不是正常的全球图，因此需要矩阵转置
+6.计算1981年全球的总蒸发量
+-------------------------------------------------------------------
+axis表示按哪个坐标轴取和，366为天数，因此取0。在hdf-view里可以看到，数据的行列号是颠倒的，不是正常的全球图，因此需要矩阵转置
 E_year=np.transpose(np.sum(E,axis=0))
 print(E_year.shape)
 
 7.得到数据中的经度和纬度，并计算各自的最大值和最小值
+--------------------------------------------
 lat=fn_nc.variables['lat']
 lat_min=np.min(lat)
 lat_max=np.max(lat)
@@ -71,6 +76,7 @@ lon_min=np.min(lon)
 lon_max=np.max(lon)
 
 8.绘图，设置画布大小和图所占位置，subplot（1,1,1）表示画一张图，类似MATLAB里的写法
+---------------------------------------------------------------------------
 plt.figure(figsize=(40,30))
 plt.subplot(1,1,1)
 
@@ -127,8 +133,10 @@ font = {'family' : 'Times New Roman',  
         } 
 cbar.set_label(r'Evaporation (mm)',fontdict=font)
 
-保存输出，dpi=100表示分辨率，可以调高
+9.保存输出，dpi=100表示分辨率，可以调高
+----------------------------------
 plt.savefig(r'C:\Users\shaoqi_i\Desktop\1.tif',dpi=100)
 
-显示图片
+10.显示图片
+-------------
 plt.show()
