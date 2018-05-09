@@ -98,4 +98,54 @@ lon,lat=m(lon,lat) <br>
 m.drawcoastlines(linewidth=0.2) <br>
 
 	经纬度网格线，包括起终点和间隔，以及label标注位置和大小，线宽，可以自己调整查看
-m.drawparallels(np.arange(-90, 90,30), labels=[1,0,0,0], fontsize=13,
+m.drawparallels(np.arange(-90, 90,30), labels=[1,0,0,0], fontsize=13,,linewidth=0.8) <br>
+m.drawmeridians(np.arange(-180, 180, 45), labels=[0,0,0,1], fontsize=13,linewidth=0.8) <br>
+
+        设置颜色colorbar
+cmap = plt.cm.jet_r <br>
+norm = matplotlib.colors.Normalize(vmin=-50, vmax=2100) <br>
+
+        此处有三种类型图
+（1）等值线图，20表示颜色分级，可改动查看效果
+cf=plt.contourf(lon,lat,E_year,20,cmap=cmap,norm=norm)
+
+cf=m.imshow(E_year[::-1],cmap=cmap,norm=norm)
+
+cf=plt.pcolormesh(lon,lat,E_year,cmap=cmap,norm=norm)
+
+##### set the title #####
+plt.title("Global Actual Evaporation in 1980",fontsize=18) 
+
+##### plot the colorbar #####
+##### colorbar location x,y and width,height #####
+cax=plt.axes([0.9, 0.11, 0.018,0.77])
+cbar=plt.colorbar(cf,cax=cax)
+
+##### colorbar ticklabels #####
+cbar.ax.tick_params(labelsize=13, direction='in')
+
+##### colorbar label ######
+font = {'family' : 'Times New Roman',   
+        'weight' : 'normal',  
+        'size'   : 15,  
+        } 
+cbar.set_label(r'Evaporation (mm)',fontdict=font)
+
+##### save the figure #####
+plt.savefig(r'C:\Users\shaoqi_i\Desktop\1.tif',dpi=100)
+
+##### show the plot #####
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
