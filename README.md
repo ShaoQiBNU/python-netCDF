@@ -106,36 +106,39 @@ cmap = plt.cm.jet_r <br>
 norm = matplotlib.colors.Normalize(vmin=-50, vmax=2100) <br>
 
         此处有三种类型图
-（1）等值线图，20表示颜色分级，可改动查看效果
-cf=plt.contourf(lon,lat,E_year,20,cmap=cmap,norm=norm)
+	（1）等值线图，20表示颜色分级，可改动查看效果
+cf=plt.contourf(lon,lat,E_year,20,cmap=cmap,norm=norm) <br>
 
-cf=m.imshow(E_year[::-1],cmap=cmap,norm=norm)
+	（2）灰度图，光标在图上移动时，可以显示该点的数值，但是需要对E_year做上下颠倒处理，否则图画出来是倒的
+cf=m.imshow(E_year[::-1],cmap=cmap,norm=norm) <br>
 
-cf=plt.pcolormesh(lon,lat,E_year,cmap=cmap,norm=norm)
+	（3）伪彩图，与等值线图相反，是渐变型
+cf=plt.pcolormesh(lon,lat,E_year,cmap=cmap,norm=norm) <br>
 
-##### set the title #####
-plt.title("Global Actual Evaporation in 1980",fontsize=18) 
+	标题
+plt.title("Global Actual Evaporation in 1980",fontsize=18)  <br>
 
-##### plot the colorbar #####
-##### colorbar location x,y and width,height #####
-cax=plt.axes([0.9, 0.11, 0.018,0.77])
-cbar=plt.colorbar(cf,cax=cax)
+	colorbar的位置(x,y)和参数设置(宽度,高度)
+cax=plt.axes([0.9, 0.11, 0.018,0.77])  <br>
+cbar=plt.colorbar(cf,cax=cax)  <br>
 
-##### colorbar ticklabels #####
-cbar.ax.tick_params(labelsize=13, direction='in')
+	colorbar的数字设置，direction='in'表示黑色刻度线向里，可删掉查看效果
+cbar.ax.tick_params(labelsize=13, direction='in')  <br>
 
-##### colorbar label ######
-font = {'family' : 'Times New Roman',   
+	colorbar的名称
+font = {'family' : 'Times New Roman',   
         'weight' : 'normal',  
         'size'   : 15,  
-        } 
-cbar.set_label(r'Evaporation (mm)',fontdict=font)
+        }   <br>
+cbar.set_label(r'Evaporation (mm)',fontdict=font)  <br>
 
-##### save the figure #####
-plt.savefig(r'C:\Users\shaoqi_i\Desktop\1.tif',dpi=100)
+9.保存输出
+----------
+plt.savefig(r'C:\Users\shaoqi_i\Desktop\1.tif',dpi=100)  <br>
 
-##### show the plot #####
-plt.show()
+10.显示
+-------
+plt.show()  <br>
 
 
 
