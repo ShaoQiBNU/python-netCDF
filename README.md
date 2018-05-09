@@ -75,8 +75,9 @@ lon=fn_nc.variables['lon'] <br>
 lon_min=np.min(lon) <br>
 lon_max=np.max(lon) <br>
 
-8.绘图，设置画布大小和图所占位置，subplot（1,1,1）表示画一张图，类似MATLAB里的写法
+8.绘图
 ---------------------------------------------------------------------------
+	设置画布大小和图所占位置，subplot（1,1,1）表示画一张图，类似MATLAB里的写法
 plt.figure(figsize=(40,30)) <br>
 plt.subplot(1,1,1) <br>
 
@@ -101,9 +102,9 @@ m.drawcoastlines(linewidth=0.2) <br>
 m.drawparallels(np.arange(-90, 90,30), labels=[1,0,0,0], fontsize=13,linewidth=0.8) <br>
 m.drawmeridians(np.arange(-180, 180, 45), labels=[0,0,0,1], fontsize=13,linewidth=0.8) <br>
 
-        设置颜色
-cmap = plt.cm.jet_r  <br>
-norm = matplotlib.colors.Normalize(vmin=-50, vmax=2100) <br>
+	颜色
+cmap = plt.cm.jet_r  <br>
+norm = matplotlib.colors.Normalize(vmin=-50, vmax=2100)  <br>
       
 	（1）等值线图，20表示颜色分级，可改动查看效果
 cf=plt.contourf(lon,lat,E_year,20,cmap=cmap,norm=norm) <br>
