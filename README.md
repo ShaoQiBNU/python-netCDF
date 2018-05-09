@@ -1,8 +1,7 @@
 #python-netCDF-用python的netCDF4库处理nc数据，并用basemap绘图，具体步骤如下：
-=====================================================================
 
 ##1.导入所需要的库
---------------
+
 import matplotlib.pyplot as plt <br> 
 plt.rc('font',family='Times New Roman',weight='normal')  <br> 
 import matplotlib.cm as cm <br> 
@@ -98,45 +97,4 @@ lon,lat=m(lon,lat)
 m.drawcoastlines(linewidth=0.2)
 
 经纬度网格线，包括起终点和间隔，以及label标注位置和大小，线宽，可以自己调整查看
-m.drawparallels(np.arange(-90, 90,30), labels=[1,0,0,0], fontsize=13,linewidth=0.8)
-m.drawmeridians(np.arange(-180, 180, 45), labels=[0,0,0,1], fontsize=13,linewidth=0.8)
-
-设置颜色，jet为python提供的颜色带，红-蓝，jet_r表示反向。norm设置最大最小范围归一化
-cmap = plt.cm.jet_r
-norm = matplotlib.colors.Normalize(vmin=-50, vmax=2100)
-
-画图类型，此处有三种：
-
-（1）等值线图，20表示colorbar分级数，可自行调节查看
-cf=plt.contourf(lon,lat,E_year,20,cmap=cmap,norm=norm)
-
-（2）热力图，光标在图上移动时，可以显示出具体数值
-cf=m.imshow(E_year[::-1],cmap=cmap,norm=norm)
-
-（3）伪彩图，图画出来是渐变的，较为好看
-cf=plt.pcolormesh(lon,lat,E_year,cmap=cmap,norm=norm)
-
-标题
-plt.title("Global Actual Evaporation in 1980",fontsize=18) 
-
-设置colorbar的位置（x,y）和参数（宽度和高度），可自行调节查看
-cax=plt.axes([0.9, 0.11, 0.018,0.77])
-cbar=plt.colorbar(cf,cax=cax)
-
-设置colorbar数字显示大小，direction='in'表示刻度的黑线向里，可删掉查看效果
-cbar.ax.tick_params(labelsize=13, direction='in')
-
-colorbar名称 
-font = {'family' : 'Times New Roman',  
-        'weight' : 'normal',  
-        'size'   : 15,  
-        } 
-cbar.set_label(r'Evaporation (mm)',fontdict=font)
-
-9.保存输出，dpi=100表示分辨率，可以调高
-----------------------------------
-plt.savefig(r'C:\Users\shaoqi_i\Desktop\1.tif',dpi=100)
-
-10.显示图片
--------------
-plt.show()
+m.drawparallels(np.arange(-90, 90,30), labels=[1,0,0,0], fontsize=13,
