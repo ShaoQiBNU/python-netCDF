@@ -106,7 +106,7 @@ m.drawmeridians(np.arange(-180, 180, 45), labels=[0,0,0,1], fontsize=13,linewidt
 cmap = plt.cm.jet_r  <br>
 norm = matplotlib.colors.Normalize(vmin=-50, vmax=2100)  <br>
 
-		（1）等值线图，20表示颜色分级，可改动查看效果
+	（1）等值线图，20表示颜色分级，可改动查看效果
 cf=plt.contourf(lon,lat,E_year,20,cmap=cmap,norm=norm)   <br>
 
 	（2）灰度图，光标在图上移动时，可以显示该点的数值，但是需要对E_year做上下颠倒处理，否则图画出来是倒的
