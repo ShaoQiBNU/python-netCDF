@@ -102,7 +102,7 @@ m.drawcoastlines(linewidth=0.2) <br>
 m.drawparallels(np.arange(-90, 90,30), labels=[1,0,0,0], fontsize=13,linewidth=0.8) <br>
 m.drawmeridians(np.arange(-180, 180, 45), labels=[0,0,0,1], fontsize=13,linewidth=0.8) <br>
 
-	颜色
+	颜色，jet表示红-蓝，jet_r表示颜色反向
 cmap = plt.cm.jet_r  <br>
 norm = matplotlib.colors.Normalize(vmin=-50, vmax=2100)  <br>
 
@@ -134,7 +134,7 @@ cbar.set_label(r'Evaporation (mm)',fontdict=font)  <br>
 
 9.保存输出
 ----------
-plt.savefig(r'C:\Users\shaoqi_i\Desktop\1.tif',dpi=100)  <br>
+plt.savefig(r'C:\Users\shaoqi_i\Desktop\evaporation.tif',dpi=100)  <br>
 
 10.显示
 -------
