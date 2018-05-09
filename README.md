@@ -1,7 +1,8 @@
-#python-netCDF-用python的netCDF4库处理nc数据，并用basemap绘图，具体步骤如下：
+python-netCDF-用python的netCDF4库处理nc数据，并用basemap绘图，具体步骤如下：
+=====================================================================
 
-##1.导入所需要的库
-
+1.导入所需要的库
+---------------
 import matplotlib.pyplot as plt <br> 
 plt.rc('font',family='Times New Roman',weight='normal')  <br> 
 import matplotlib.cm as cm <br> 
@@ -30,7 +31,7 @@ print("E is:") <br>
 summary_E=fn_nc.variables['E'] <br> 
 print(summary_E) <br> 
 
-#属性
+		#属性
 print("E's attributes are:") <br> 
 attributes_E=fn_nc.variables['E'].ncattrs() <br> 
 print(attributes_E) <br> 
