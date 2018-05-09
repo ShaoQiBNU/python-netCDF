@@ -3,7 +3,7 @@ python-netCDF-用python的netCDF4库处理nc数据，并用basemap绘图，具�
 
 1.导入所需要的库
 --------------
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt<br> 
 plt.rc('font',family='Times New Roman',weight='normal')  
 import matplotlib.cm as cm
 import matplotlib.colors
