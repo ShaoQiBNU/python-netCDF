@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@author: ShaoQi(BNU 17GIS Director: Li Jing; NUIST 13RS Director: Xu YongMing)
+@author: ShaoQi(BNU 17GIS Advisor: Li Jing; NUIST 13RS Advisor: Xu YongMing)
 """
 
 ############# load packages ############### 
