@@ -39,14 +39,14 @@ summary_E=fn_nc.variables['E']
 print(summary_E) 
 
 ## 属性
-print("E's attributes are:") <br> 
-attributes_E=fn_nc.variables['E'].ncattrs() <br> 
-print(attributes_E) <br> 
+print("E's attributes are:")
+attributes_E=fn_nc.variables['E'].ncattrs()
+print(attributes_E)
 
 ## 单位
-print("E's units are:") <br> 
-units_E=fn_nc.variables['E'].units <br> 
-print(units_E) <br> 
+print("E's units are:")
+units_E=fn_nc.variables['E'].units
+print(units_E)
 
 ## 无效值
 print("E's _FillValue are:")
