@@ -92,7 +92,7 @@ lon_min=np.min(lon)
 lon_max=np.max(lon)
 ```
 
-8.绘图
+## 8.绘图
 
 ```python
 ## 设置画布大小和图所占位置，subplot（1,1,1）表示画一张图，类似MATLAB里的写法
